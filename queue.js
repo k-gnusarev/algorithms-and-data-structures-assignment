@@ -20,6 +20,7 @@ MyQueue.prototype.pop = function () {
       this.outStack.push(this.inStack.pop())
     }
   }
+
   return this.outStack.pop()
 };
 
@@ -33,17 +34,14 @@ MyQueue.prototype.peek = function () {
     }
   }
 
-  return this.outStack.pop()
+  return this.outStack[this.outStack.length - 1]
 };
 
 /**
  * @return {boolean}
  */
 MyQueue.prototype.empty = function () {
-  const inStackLength = this.inStack.length
-  const outStackLength = this.outStack.length
-  //if both are 0 return true
-  return !inStackLength && !outStackLength
+  return !this.inStack.length && !this.outStack.length
 };
 
 /**
@@ -54,18 +52,3 @@ MyQueue.prototype.empty = function () {
  * var param_3 = obj.peek()
  * var param_4 = obj.empty()
  */
-
-const obj = new MyQueue()
-console.log(obj)
-console.log(obj.empty())
-obj.push(1)
-obj.push(2)
-obj.push(3)
-obj.push(4)
-console.log(obj)
-const param_2 = obj.pop()
-console.log(obj, param_2)
-const param_3 = obj.peek()
-console.log(obj, param_3)
-const param_4 = obj.empty()
-console.log(obj, param_4)
