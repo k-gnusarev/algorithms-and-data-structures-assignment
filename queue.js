@@ -1,4 +1,4 @@
-var MyQueue = function() {
+var MyQueue = function () {
   this.inStack = []
   this.outStack = []
 };
@@ -7,14 +7,14 @@ var MyQueue = function() {
  * @param {number} x
  * @return {void}
  */
-MyQueue.prototype.push = function(x) {
+MyQueue.prototype.push = function (x) {
   this.inStack.push(x)
 };
 
 /**
  * @return {number}
  */
-MyQueue.prototype.pop = function() {
+MyQueue.prototype.pop = function () {
   if (!this.outStack.length) {
     while (this.inStack.length) {
       this.outStack.push(this.inStack.pop())
@@ -26,7 +26,7 @@ MyQueue.prototype.pop = function() {
 /**
  * @return {number}
  */
-MyQueue.prototype.peek = function() {
+MyQueue.prototype.peek = function () {
   if (!this.outStack.length) {
     while (this.inStack.length) {
       this.outStack.push(this.inStack.pop())
@@ -39,7 +39,7 @@ MyQueue.prototype.peek = function() {
 /**
  * @return {boolean}
  */
-MyQueue.prototype.empty = function() {
+MyQueue.prototype.empty = function () {
   const inStackLength = this.inStack.length
   const outStackLength = this.outStack.length
   //if both are 0 return true
